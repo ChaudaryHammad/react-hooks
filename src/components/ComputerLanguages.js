@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import uuid from 'uuid'
+import uuid from 'react-uuid';
+import useInputHook from "./useInputHook";
 function ComputerLanguages() {
-    const [name,setName] = useState('')
+    const [name,handleInput,clearName] = useInputHook('')
+
+
   const [computerLanguages, setComputerLanguages] = useState([
     {
       id: 1,
@@ -33,7 +36,7 @@ function ComputerLanguages() {
   const handleClick=(e)=>{
     e.preventDefault();
     setComputerLanguages([...computerLanguages,{id:uuid(),name:name,age:30,level:'high'}])
-    setName('')
+    clearName('')
   }
 
 
@@ -72,7 +75,7 @@ function ComputerLanguages() {
       className="border-gray-900 p-2"
       type="text" 
       placeholder="Enter langauage name..." required
-      onChange={(e)=>setName(e.target.value)}
+      onChange={handleInput}
       value={name} />
       </form>
     </>
