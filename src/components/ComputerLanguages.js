@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import uuid from 'uuid'
+import {uuid} from 'uuid'
 function ComputerLanguages() {
     const [name,setName] = useState('')
   const [computerLanguages, setComputerLanguages] = useState([
