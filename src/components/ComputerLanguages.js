@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 function ComputerLanguages() {
+    const [name,setName] = useState('')
   const [computerLanguages, setComputerLanguages] = useState([
     {
       id: 1,
@@ -29,13 +30,13 @@ function ComputerLanguages() {
   ]);
 
 
-  const handleClick=()=>{
-    setComputerLanguages([...computerLanguages,{id:5,name:'javaScript',age:30,level:'high'}])
+  const handleClick=(e)=>{
+    e.preventDefault();
+    setComputerLanguages([...computerLanguages,{id:uuid(),name:name,age:30,level:'high'}])
+    setName('')
   }
 
-  const handleEmpty=()=>{
-    setComputerLanguages([])
-  }
+
 
   return (
     <>
@@ -64,8 +65,16 @@ function ComputerLanguages() {
            
         </tbody>
       </table>
+      <form onSubmit={handleClick}>
       <button className="p-2 rounded text-white bg-blue-500" onClick={handleClick}>Add</button>
-      <button className="p-2 ml-2 rounded text-white bg-red-500" onClick={handleEmpty}>Clear</button>
+     
+      <input 
+      className="border-gray-900 p-2"
+      type="text" 
+      placeholder="Enter langauage name..." required
+      onChange={(e)=>setName(e.target.value)}
+      value={name} />
+      </form>
     </>
   );
 }
