@@ -3,7 +3,7 @@ import uuid from 'react-uuid';
 import useInputHook from "./useInputHook";
 function ComputerLanguages() {
     const [name,handleInput,clearName] = useInputHook('')
-
+   const [age,handleInputAge,clearAge] = useInputHook('')
 
   const [computerLanguages, setComputerLanguages] = useState([
     {
@@ -35,15 +35,16 @@ function ComputerLanguages() {
 
   const handleClick=(e)=>{
     e.preventDefault();
-    setComputerLanguages([...computerLanguages,{id:uuid(),name:name,age:30,level:'high'}])
+    setComputerLanguages([...computerLanguages,{id:uuid(),name:name,age:age,level:'high'}])
     clearName('')
+    clearAge('')
   }
 
 
 
   return (
     <>
-      <h1>Computer Languages</h1>
+      <h1 className="font-bold ">Computer Languages</h1>
       <table className="border">
         <thead>
             <tr>
@@ -77,6 +78,13 @@ function ComputerLanguages() {
       placeholder="Enter langauage name..." required
       onChange={handleInput}
       value={name} />
+       
+       <input 
+      className="border-gray-900 p-2"
+      type="text" 
+      placeholder="Enter Age..." required
+      onChange={handleInputAge}
+      value={age} />
       </form>
     </>
   );
