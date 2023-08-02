@@ -2,15 +2,20 @@ import { useContext } from 'react';
 import './App.css';
 import Component1 from './components/Component1';
 // import ComputerLanguages from './components/ComputerLanguages';
-import {Context} from './index'
+// import {Context} from './index'
+
+import {Routes,Route, BrowserRouter} from 'react-router-dom'
+import HomePage from './pages/HomePage';
+import NavBar from './components/NavBar';
+import ContactPage from './pages/ContactPage';
 
 function App() {
-  const data = useContext(Context)
-  console.log(data);
+  // const data = useContext(Context)
+  // console.log(data);
   return (
     <>
      {/* <ComputerLanguages/> */}
-    <div className='font-bold'>App Component</div>
+    {/* <div className='font-bold'>App Component</div>
     <p>Passed value by context: {data[2].name}</p>
     {
       data.map((data)=> {
@@ -22,8 +27,22 @@ function App() {
           </div>
         )
       })
-    }
-    <Component1/>
+    } */}
+    {/* <Component1/> */}
+
+    {/* <NavBar/> */}
+
+    <BrowserRouter>
+    <NavBar/>
+     
+    
+      <Routes>
+     
+        <Route path='/home-page' element={<HomePage/>}/>
+        <Route path='/contact' element={<ContactPage/>}/>
+      </Routes>
+      <Component1/>
+    </BrowserRouter>
     </>
   );
 }
