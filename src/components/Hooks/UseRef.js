@@ -16,7 +16,6 @@ function focus(){
 
   return (
   <>
-      <div>UseRef Hook</div>
 
 <input ref={inputRef} type="text" value={name} onChange={(e)=>setName(e.target.value)}  name="" id="" />
 <h1>{name}</h1>
