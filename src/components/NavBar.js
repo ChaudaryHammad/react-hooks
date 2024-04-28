@@ -15,8 +15,10 @@ function NavBar() {
                 <Link to='/contact'>Contact</Link>
             </li>
             <li>
-                <Link to='/'>Super Home</Link>
+                <Link to='/hooks'>Hooks</Link>
             </li>
+
+
         </ul>
     </div>
     </>

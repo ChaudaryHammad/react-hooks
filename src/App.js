@@ -8,6 +8,7 @@ import {Routes,Route, BrowserRouter} from 'react-router-dom'
 import HomePage from './pages/HomePage';
 import NavBar from './components/NavBar';
 import ContactPage from './pages/ContactPage';
+import Hooks from './pages/Hooks';
 
 function App() {
   // const data = useContext(Context)
@@ -40,8 +41,10 @@ function App() {
      
         <Route path='/home-page' element={<HomePage/>}/>
         <Route path='/contact' element={<ContactPage/>}/>
+        <Route path='/hooks' element={<Hooks/>}/>
+
       </Routes>
-      <Component1/>
+
     </BrowserRouter>
     </>
   );
