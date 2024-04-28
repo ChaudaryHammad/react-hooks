@@ -19,7 +19,11 @@ function UseMemo() {
 
 
    const getdouble = useMemo(()=>{
-    return slowFun(double)
+    return(
+        console.log('use memo is called'),
+    slowFun(double)
+   )
+    
    },[double])
 
 
